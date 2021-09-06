@@ -1,0 +1,316 @@
+* {
+  font-family: Arial;
+}
+
+.open-btn {
+  margin: 10px;
+  width: 200px;
+  height: 35px;
+  border: 1px solid #333;
+  font-family: Arial;
+  font-size: 20px;
+  color: #333333;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  transition: 1s;
+  background-color: #eee;
+}
+
+.open-btn:before,
+.open-btn:after {
+  display: flex;
+  position: absolute;
+  background: #0090f6;
+  z-index: -1;
+  transition: 1s;
+  content: "";
+}
+
+.open-btn:before {
+  height: 35px;
+  width: 200px;
+}
+
+.open-btn:after {
+  height: 20px;
+  width: 200px;
+}
+
+.open-btn:hover::before {
+  width: 0;
+  background: #fff;
+}
+
+.open-btn:hover::after {
+  height: 0;
+  background: #fff;
+}
+
+.open-btn:hover {
+  background: #fff;
+}
+
+.popup {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.active,
+.dot:hover {
+  background-color: black;
+}
+
+.popup.act {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup_content {
+  border-radius: 5px;
+  background-color: white;
+  height: 386px;
+  width: 744px;
+  transform: scale(0.5);
+  transition: 0.5s all;
+  @media (max-width: 600px) {
+    height: 663px;
+    width: 310px;
+  }
+}
+
+.popup_content.act {
+  transform: scale(1);
+}
+
+.titleContainer {
+  height: 30px;
+  width: 311px;
+}
+
+.prodTitle {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form {
+  text-align: left;
+  height: 335px;
+  width: 375px;
+  @media (max-width: 600px) {
+    text-align: center;
+    height: 310px;
+    width: 270px;
+  }
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.closeButton {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  height: 16px;
+  width: 26px;
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.closeIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.price {
+  color: #0090f6;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sizeTitle {
+  font-size: 13px;
+  color: #333333;
+}
+
+.buttonsGroup {
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.buttonSize {
+  margin: 8px 14px 22px 0;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #c3c7c8;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border-radius: 6px;
+  font-size: 12px;
+  @media (max-width: 600px) {
+    margin: 8px 8px 22px 0;
+    width: 70px;
+  }
+}
+
+.buttonSize:active {
+  border: 2px solid #0090f6;
+}
+
+.colorTitle {
+  font-size: 13px;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #c3c7c8;
+  padding: 0 12px;
+  margin: 7px 0;
+  width: 370px;
+  height: 35px;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: inherit;
+  border-radius: 5px;
+  @media (max-width: 600px) {
+    width: 270px;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding-left: 1px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+.box {
+  @media (max-width: 600px) {
+    margin: 0 !important;
+  }
+}
+
+.available,
+.notAvailable {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-size: 13px;
+  margin: 9px 0 22px 0;
+}
+
+:any-link {
+  color: #0090f6;
+  text-decoration: none;
+}
+
+.send {
+  margin: 0 12px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.availableContainer {
+  display: flex;
+}
+
+.prodAvailable {
+  margin: 0 25px 0 11px;
+}
+
+.sendInfo {
+  display: flex;
+}
+
+.slide {
+  height: 100%;
+  width: 40%;
+}
+
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter {
+  height: 50px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #c3c7c8;
+  border-radius: 6px;
+  @media (max-width: 600px) {
+    width: 45%;
+  }
+}
+
+.countDecrement,
+.countIncrement {
+  height: 100%;
+  width: 30px;
+  font-size: bold;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border: none;
+}
+
+.submitButton {
+  width: 218px;
+  height: 50px;
+  margin-right: 5px;
+  font-size: bold;
+  background-color: #0090f6;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  @media (max-width: 600px) {
+    width: 45%;
+  }
+}
